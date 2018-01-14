@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from qianmu.items import UniversityItem
+from scrapy_redis.spiders import RedisSpider
 
-class UniversitySpider(scrapy.Spider):
-    name = 'university'
-    allowed_domains = ['qianmu.iguye.com']
-    start_urls = ['http://qianmu.iguye.com/2018USNEWS世界大学排名']
+class UniversitySpider(RedisSpider):
+    name = 'u2'
+    # allowed_domains = ['qianmu.iguye.com']
+    # start_urls = ['http://qianmu.iguye.com/2018USNEWS世界大学排名']
 
     def __init__(self, max_num=0, *args, **kwargs):
         super(UniversitySpider, self).__init__(*args, **kwargs)
